@@ -1,0 +1,11 @@
+<ion-item>
+  <ion-select
+    aria-label="Categories"
+    interface="popover"
+    placeholder="Select category"
+  >
+    <ion-select-option *ngFor="let category of categories" >
+      {{ category }}
+    </ion-select-option>
+  </ion-select>
+</ion-item>

@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button size="default" slot="end" (click)="goToDetails()" >
+      <ion-icon name="cart"></ion-icon>
+    </ion-button>
+    <ion-title>Producto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <p>ID: {{ details }} </p>
+    <p>Titulo: {{ details }}</p>
+  </ion-toolbar>
+</ion-content>

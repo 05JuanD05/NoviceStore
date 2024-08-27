@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-
+import { ApiService } from '../services/api.service';
 import { HomePageRoutingModule } from './home-routing.module';
+import { ProductsComponent } from '../products/products.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CategoriesComponent } from '../categories/categories.component';
 
 
 @NgModule({
@@ -12,8 +15,10 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, ProductsComponent, CategoriesComponent],
+  providers: [ApiService]
 })
 export class HomePageModule {}
