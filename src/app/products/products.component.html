@@ -1,4 +1,4 @@
-<ion-card *ngFor="let product of products" [routerLink]="['/details/' + product.id]">
+<ion-card *ngFor="let product of products" [routerLink]="['/details/' + product.id]" color="secondary">
   <ion-card-header>
     <img [src]="product.image">
     <ion-card-title>{{ product.title }}</ion-card-title>

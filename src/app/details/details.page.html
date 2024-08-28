@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-button size="default" slot="end" (click)="goToDetails()" >
+  <ion-toolbar color="primary">
+    <ion-button size="default" slot="end" (click)="goToDetails()" color="light">
       <ion-icon name="cart"></ion-icon>
     </ion-button>
     <ion-title>Producto</ion-title>
@@ -10,9 +10,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-toolbar>
-    <p>ID: {{ details }} </p>
-    <p>Titulo: {{ details }}</p>
+<ion-content *ngIf="productItem">
+  <ion-toolbar color="primary">
+    <ion-card>
+      <img [src]="productItem.image" alt="{{ productItem.title }}">
+      <ion-card-header>
+        <ion-card-title>{{ productItem.title }}</ion-card-title>
+        <ion-card-subtitle>{{ productItem.price | currency }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content color="secondary">
+        <p>{{ productItem.description }}</p>
+        <p>Category: {{ productItem.category }}</p>
+        <p>Rating: {{ productItem.rating.rate }} ({{ productItem.rating.count }} reviews)</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-button id="headerAnchor" color="light">Purchase</ion-button>
+    <ion-toast trigger="headerAnchor" position="top" positionAnchor="header" message="Añadido con Exito!!" duration="2000" color="success"></ion-toast>
   </ion-toolbar>
 </ion-content>

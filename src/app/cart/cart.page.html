@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="end">
-      <ion-button shape="round" id="open-toast" color="primary">Sold</ion-button>
+      <ion-button shape="round" id="open-toast" color="light">Sold</ion-button>
     </ion-buttons>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
@@ -10,7 +10,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-toast trigger="open-toast" message="Compra Realizada" [duration]="3000" icon="cash"></ion-toast>
+<ion-content [fullscreen]="true" color="primary">
+  <ion-toast trigger="open-toast" message="Compra Realizada" [duration]="3000" icon="cash" color="success"></ion-toast>
 </ion-content>
 

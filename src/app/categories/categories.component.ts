@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -9,7 +9,6 @@ import { ApiService } from '../services/api.service';
 export class CategoriesComponent  implements OnInit {
 
   categories: string[] = [];
-  categoriesEspecific: string[] = [];
 
   constructor(private apiService: ApiService) { }
 
@@ -25,5 +24,4 @@ export class CategoriesComponent  implements OnInit {
       }
     )
   }
-
 }

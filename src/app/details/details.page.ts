@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../interfaz/itemProduct';
-import { environment } from 'src/environments/environment';
 import { ApiService } from '../services/api.service';
+import { APIStore } from '../api/apiStore';
 
 @Component({
   selector: 'app-details',
@@ -13,16 +13,27 @@ export class DetailsPage implements OnInit{
 
   public details!: Product;
   private id!: number;
+  productItem: APIStore | null = null;
 
-  constructor(private readonly activeRouter: ActivatedRoute, private readonly apiService: ApiService, private router: Router) {}
+  constructor(private readonly activeRouter: ActivatedRoute, private readonly apiService: ApiService, private readonly router: Router) {}
 
   async ngOnInit(){
-    this.activeRouter.params.subscribe( async (activeRouter) => {
-      const url = environment.apiUrl + "products/" + activeRouter["id"];
-    });
+    const id = this.activeRouter.snapshot.paramMap.get('id');
+    if(id){
+      this.apiService.getProductById(+id).subscribe(
+        (data: APIStore) => {
+          this.productItem = data;
+        },
+        (error) => {
+          console.error('Eror Mano', error)
+        }
+      )
+    }
   }
 
   goToDetails() {
     this.router.navigate(['/cart']);
   }
+
+
 }

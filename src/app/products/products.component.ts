@@ -1,6 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ApiService } from '../services/api.service';
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -8,7 +7,7 @@ import { ApiService } from '../services/api.service';
 })
 export class ProductsComponent implements OnInit {
 
-  @Output() products: any[] = [];
+  products: any[] = [];
 
   constructor(private apiService: ApiService) { }
 

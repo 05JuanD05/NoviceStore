@@ -1,7 +1,7 @@
 <app-categories></app-categories>
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-button size="default" slot="end" (click)="goToDetails()">
+  <ion-toolbar color="primary">
+    <ion-button size="default" slot="end" (click)="goToDetails()" color="light">
       <ion-icon name="cart"></ion-icon>
     </ion-button>
     <ion-title>
@@ -10,6 +10,6 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="primary">
   <app-products></app-products>
 </ion-content>
