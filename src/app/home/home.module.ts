@@ -8,7 +8,6 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { ProductsComponent } from '../products/products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from '../categories/categories.component';
-import { APIStore } from '../api/apiStore';
 
 
 @NgModule({

@@ -25,7 +25,7 @@ export class DetailsPage implements OnInit{
           this.productItem = data;
         },
         (error) => {
-          console.error('Eror Mano', error)
+          console.error('Error Mano', error)
         }
       )
     }

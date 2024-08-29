@@ -11,6 +11,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" color="primary">
+ <!-- <ion-item *ngFor="let produ of cardProdu">
+    <ion-thumbnail slot="start">
+      <img [src]="produ.image">
+    </ion-thumbnail>
+    <ion-label>
+      <h2>{{ produ.title}}</h2>
+      <p> {{ produ.price | currency }}</p>
+    </ion-label>
+  </ion-item> -->
   <ion-toast trigger="open-toast" message="Compra Realizada" [duration]="3000" icon="cash" color="success"></ion-toast>
 </ion-content>
 
